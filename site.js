@@ -78,8 +78,9 @@ let app = new Vue({
 		startMoveEntity: function (e) {
 			this.movingEntity = e;
 		},
-		moveEntity: function (e, event) {
+		moveEntity: function (event) {
 			if (this.movingEntity != null) {
+				let e = this.movingEntity;
 				this.$store.dispatch("CHANGE_ENTITY_POSITION", { id: e.id, x: e.x + event.movementX, y: e.y + event.movementY });
             }
 		},

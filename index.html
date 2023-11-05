@@ -16,10 +16,10 @@
 			<div class="main-field">
 				<div class="panel-header">Диаграмма</div>
 				<!-- Векторное изображение, на котором мы будем выводить диаграмму -->
-				<svg width="100%" height="500px">
-					<g class="svg-entity" v-for="e in entities" 
-					   v-on:mousedown="startMoveEntity(e)" v-on:mousemove="moveEntity(e, event)" 
+				<svg width="100%" height="500px" v-on:mousemove="moveEntity(event)" 
 					   v-on:mouseup="stopMoveEntity" v-on:mouseleave="stopMoveEntity">
+					<g class="svg-entity" v-for="e in entities" 
+					   v-on:mousedown="startMoveEntity(e)">
 						<rect class="svg-entity-rect" width="200" height="100" rx="5" ry="5" v-bind="{ x: e.x, y: e.y }" />
 						<line class="svg-entity-header-line" v-bind="{ x1: e.x, y1: e.y + 20, x2: e.x + 200, y2: e.y + 20}" />
 						<text class="svg-entity-header-text" v-bind="{ x: e.x + 100, y: e.y + 20 / 2 }" >
