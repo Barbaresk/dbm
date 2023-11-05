@@ -1,0 +1,145 @@
+﻿/* стили цветов и различных размеров */
+:root {
+	--main-background-color: #ffe0c0;
+	--panels-background-color: #fff8f0;
+	--text-color: #202020;
+	--header-background-color: #ffd0a0;
+	--buttons-border-color: #ffd0a0;
+	--buttons-background-color: #ffe0c0;
+	--buttons-hover-background-color: #ffd0a0;
+	--input-border-color: #ffd0a0;
+
+	--instruments-panel-width: 100px;
+	--working-panel-width: 200px;
+	--panels-margin: 10px;
+	--panels-border-radius: 10px;
+	--input-border-radius: 5px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--main-background-color);
+	font-size: 0;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.instruments-panel {
+	display: inline-block;
+	margin: var(--panels-margin) 0 0 var(--panels-margin);
+	width: var(--instruments-panel-width);
+	height: 500px;
+	vertical-align: top;
+	position: relative;
+
+	overflow: hidden;
+	border-radius: var(--panels-border-radius);
+	background-color: var(--panels-background-color);
+}
+
+.form-button {
+	display: block;
+	margin: var(--panels-margin) var(--panels-margin) 0 var(--panels-margin);
+	font-size: 14px;
+	text-align: center;
+	padding: 5px;
+	border: 1px solid var(--buttons-border-color);
+	cursor: pointer;
+    transition: 0.2s;
+	border-radius: var(--panels-border-radius);
+}
+
+	.form-button:hover {
+		background-color: var(--buttons-hover-background-color);
+		transition: 0.2s;
+	}
+
+.main-field {
+	display: inline-block;
+	margin: var(--panels-margin);
+	width: calc(100% - var(--instruments-panel-width) - var(--working-panel-width) - 4 * var(--panels-margin));
+	height: 500px;
+	vertical-align: top;
+	position: relative;
+
+	overflow: hidden;
+	border-radius: var(--panels-border-radius);
+	background-color: var(--panels-background-color);
+}
+
+.working-panel {
+	display: inline-block;
+	margin: var(--panels-margin) var(--panels-margin) 0 0;
+	width: var(--working-panel-width);
+	height: 500px;
+	vertical-align: top;
+	position: relative;
+
+	overflow: hidden;
+	border-radius: var(--panels-border-radius);
+	background-color: var(--panels-background-color);
+}
+
+.panel-header {
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	color: var(--text-color);
+	background-color: var(--header-background-color);
+	padding: 5px 0;
+	text-align: center;
+}
+
+.panel-input-header {
+	display: block;
+	font-size: 14px;
+	text-align: center;
+	margin: var(--panels-margin) var(--panels-margin) 0 var(--panels-margin);
+}
+
+.panel-input {
+	width: calc(var(--working-panel-width) - var(--panels-margin) * 2);
+	margin: var(--panels-margin) var(--panels-margin) 0 var(--panels-margin);
+	resize: block;
+	border-radius: var(--input-border-radius);
+	border: 1px solid var(--input-border-color);
+}
+
+	.panel-input:focus-visible {
+		border: 1px solid var(--input-border-color);
+		outline: none;
+		box-shadow: inset 0 1px 1px var(--input-border-color), 0 0 8px var(--input-border-color);
+	}
+
+/* стили непосредственно для svg */
+
+:root {
+	--svg-entity-background-color: #fff0e0;
+	--svg-entity-border-color: #ffd0a0;
+}
+
+.svg-entity {
+	cursor: pointer;
+}
+
+.svg-entity-rect {
+	fill: var(--svg-entity-background-color);
+	stroke-width: 1;
+	stroke: var(--svg-entity-border-color);
+}
+
+.svg-entity-header-line {
+	stroke-width: 1;
+	stroke: var(--svg-entity-border-color);
+}
+
+.svg-entity-header-text {
+	font-size: 12px;
+	dominant-baseline: middle;
+	text-anchor: middle;
+}
