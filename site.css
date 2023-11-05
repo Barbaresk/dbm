@@ -70,6 +70,8 @@ body {
 	overflow: hidden;
 	border-radius: var(--panels-border-radius);
 	background-color: var(--panels-background-color);
+
+	user-select: none;
 }
 
 .working-panel {
